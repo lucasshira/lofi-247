@@ -1,0 +1,70 @@
+.playerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16rem;
+  background-color: var(--black-80);
+  padding: 10px;
+  border: 1px solid var(--gray-100);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  gap: 1rem;
+}
+
+.icon {
+  color: var(--white-60);
+  background: transparent;
+  cursor: pointer;
+}
+
+.volumeSlider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100px;
+  background: var(--gray-100);
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+.volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--white-100);
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.volumeSlider::-webkit-slider-thumb:hover {
+  box-shadow: 
+    0 0 0 6px rgba(128, 128, 128, 0.5);
+}
+
+.volumeSlider::-webkit-slider-runnable-track {
+  background: var(--gray-100);
+  border-radius: 5px;
+}
+
+.volumeSlider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--white-100);
+  cursor: pointer;
+}
+
+.volumeSlider::-moz-range-track {
+  background: var(--gray-100);
+  border-radius: 5px;
+}
+
+.volumeSlider:hover::-webkit-slider-thumb {
+  background: var(--white-80);
+}
+
+.volumeSlider:hover::-moz-range-thumb {
+  background: var(--white-80);
+}
