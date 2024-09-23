@@ -1,14 +1,38 @@
+.messageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 1rem;
+}
+
+.musicIcon {
+  color: purple;
+  margin-right: 0.5rem;
+  width: 24px;
+  height: 24px;
+}
+
+.welcomeMessage {
+  font-family: monospace;
+  color: white;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
 .playerContainer {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 16rem;
+  width: 22rem;
   background-color: var(--black-80);
-  padding: 10px;
-  border: 1px solid var(--gray-100);
+  padding: 0.8rem;
+  border: 1px solid var(--white-100);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  gap: 1rem;
+  background-color: transparent;
 }
 
 .icon {
@@ -17,54 +41,39 @@
   cursor: pointer;
 }
 
-.volumeSlider {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100px;
-  background: var(--gray-100);
-  border-radius: 8px;
-  outline: none;
-  cursor: pointer;
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.volumeSlider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
+.icon:hover {
+  color: #9932CC
+}
+
+.volumeIndicator {
+  display: flex;
+  align-items: flex-end;
+}
+
+.volumeBar {
   width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--white-100);
-  cursor: pointer;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  height: 18px;
+  background-color: var(--gray-60);
+  margin-right: 4px;
+  transition: background-color 0.3s;
+  animation: none;
 }
 
-.volumeSlider::-webkit-slider-thumb:hover {
-  box-shadow: 
-    0 0 0 6px rgba(128, 128, 128, 0.5);
+@keyframes pulse {
+  0%, 100% {
+    background-color: #9932CC
+  }
+  50% {
+    background-color: var(--gray-60);
+  }
 }
 
-.volumeSlider::-webkit-slider-runnable-track {
-  background: var(--gray-100);
-  border-radius: 5px;
-}
-
-.volumeSlider::-moz-range-thumb {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--white-100);
-  cursor: pointer;
-}
-
-.volumeSlider::-moz-range-track {
-  background: var(--gray-100);
-  border-radius: 5px;
-}
-
-.volumeSlider:hover::-webkit-slider-thumb {
-  background: var(--white-80);
-}
-
-.volumeSlider:hover::-moz-range-thumb {
-  background: var(--white-80);
+.volumeBar.active {
+  animation: pulse 1.5s infinite;
 }
