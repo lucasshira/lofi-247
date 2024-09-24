@@ -10,22 +10,24 @@ const Player = () => {
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
 
   const channels = [
-    'mwPR8aizAyo',
-    '5yx6BWlEVcY',
-    '7NOSDKb0HlU',
-    'tNkZsRW7h2c',
-    'qH3fETPsqXU'
+    'mwPR8aizAyo', // Coffee Shop Radio ☕ - 24/7 lofi & jazzy hip-hop beats
+    '5yx6BWlEVcY', // Chillhop Radio - jazzy & lofi hip hop beats 🐾
+    '7NOSDKb0HlU', // lofi hip hop radio - beats to study/relax to 🐾
+    'qH3fETPsqXU', // 【24/7 CHILL LOFI HIP HOP RADIO】beats to sleep/relax/study to
+    'tGfQYbArQhc', // jazz/lofi hip hop radio🌱chill beats to relax/study to [LIVE 24/7]
+    'tNkZsRW7h2c' // Space Ambient Music LIVE 24/7: Space Traveling Background Music, Music for Stress Relief, Dreaming
   ];
 
   const gifs = [
     'https://media.giphy.com/media/pVGsAWjzvXcZW4ZBTE/giphy.gif',
-    'https://media.giphy.com/media/ckr4W2ppxPBeIF8dx4/giphy.gif',
     'https://media.giphy.com/media/ttknk7M3d3UBEeZsii/giphy.gif',
     'https://media.giphy.com/media/ssq8oGi0pPO5rMLrEV/giphy.gif',
     "https://media.giphy.com/media/v2WuhMBzb3h5e/giphy.gif",
     "https://media.giphy.com/media/E8GfFH47PKeyI/giphy.gif",
-    "https://media.giphy.com/media/NKEt9elQ5cR68/giphy.gif",
-    "https://media.giphy.com/media/9B7XwCQZRQfQs/giphy.gif"
+    "https://media.giphy.com/media/wjjvv8CEWSdAcdlgtP/giphy.gif",
+    "https://media.giphy.com/media/xUOwGcu6wd0cXBj5n2/giphy.gif",
+    "https://media.giphy.com/media/jUJgL0iByjsAS2MQH1/giphy.gif",
+    "https://media.giphy.com/media/vMSXa7KFGx49aeeXhe/giphy.gif"
   ];
 
   const shuffleArray = (array: string[]) => {
