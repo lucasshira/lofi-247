@@ -2,21 +2,14 @@ import { PlayCircle, PauseCircle, SpeakerHigh, SpeakerSimpleSlash, RewindCircle,
 import { useRef, useState, useEffect } from "react";
 import styles from './Player.module.css';
 
+import { channels } from '../channels';
+
 const Player = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [currentChannelIndex, setCurrentChannelIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
-
-  const channels = [
-    'mwPR8aizAyo', // Coffee Shop Radio ☕ - 24/7 lofi & jazzy hip-hop beats
-    '5yx6BWlEVcY', // Chillhop Radio - jazzy & lofi hip hop beats 🐾
-    '7NOSDKb0HlU', // lofi hip hop radio - beats to study/relax to 🐾
-    'qH3fETPsqXU', // 【24/7 CHILL LOFI HIP HOP RADIO】beats to sleep/relax/study to
-    'tGfQYbArQhc', // jazz/lofi hip hop radio🌱chill beats to relax/study to [LIVE 24/7]
-    'tNkZsRW7h2c' // Space Ambient Music LIVE 24/7: Space Traveling Background Music, Music for Stress Relief, Dreaming
-  ];
 
   const gifs = [
     'https://media.giphy.com/media/pVGsAWjzvXcZW4ZBTE/giphy.gif',
@@ -27,7 +20,27 @@ const Player = () => {
     "https://media.giphy.com/media/wjjvv8CEWSdAcdlgtP/giphy.gif",
     "https://media.giphy.com/media/xUOwGcu6wd0cXBj5n2/giphy.gif",
     "https://media.giphy.com/media/jUJgL0iByjsAS2MQH1/giphy.gif",
-    "https://media.giphy.com/media/vMSXa7KFGx49aeeXhe/giphy.gif"
+    "https://media.giphy.com/media/vMSXa7KFGx49aeeXhe/giphy.gif",
+    "https://media.giphy.com/media/XbJYBCi69nyVOffLIU/giphy.gif",
+    "https://media.giphy.com/media/RMwgs5kZqkRyhF24KK/giphy.gif",
+    "https://media.giphy.com/media/l19ipdY2pjK3d8Omtz/giphy.gif",
+    "https://media.giphy.com/media/84SFZf1BKgzeny1WxQ/giphy.gif",
+    "https://media.giphy.com/media/dSdSQmzlJopuqueF2i/giphy.gif",
+    "https://media.giphy.com/media/1zgzISaYrnMAYRJJEr/giphy.gif",
+    "https://media.giphy.com/media/1fnu914Z79qQpVi2xZ/giphy.gif",
+    "https://media.giphy.com/media/xTcnT45z6H5gxFYZZS/giphy.gif",
+    "https://media.giphy.com/media/dvreHY4p06lzVSDrvj/giphy.gif",
+    "https://media.giphy.com/media/9jwuxt5bXKadi/giphy.gif",
+    "https://media.giphy.com/media/p71BYIPogqBPy/giphy.gif",
+    "https://media.giphy.com/media/5ZYA31R5OP6JdmVP3f/giphy.gif",
+    "https://media.giphy.com/media/orTCRDwFyW5zFHe4kS/giphy.gif",
+    "https://media.giphy.com/media/2yzgWbRc97QOIUpklz/giphy.gif",
+    "https://media.giphy.com/media/4DNPcZOIcgnwA/giphy.gif",
+    "https://media.giphy.com/media/97e6IX0kayYTK/giphy.gif",
+    "https://media.giphy.com/media/Basrh159dGwKY/giphy.gif",
+    "https://media.giphy.com/media/9LZTcawH3mc8V2oUqk/giphy.gif",
+    "https://media.giphy.com/media/gH1jGsCnQBiFHWMFzh/giphy.gif",
+    "https://media.giphy.com/media/ZCZ7FHlu3sPek3h0zP/giphy.gif",
   ];
 
   const shuffleArray = (array: string[]) => {
@@ -39,6 +52,8 @@ const Player = () => {
   };
 
   const shuffledGifs = shuffleArray(gifs);
+
+  console.log(channels)
 
   const currentChannel = channels[currentChannelIndex];
   const currentGif = shuffledGifs[currentChannelIndex];
@@ -102,7 +117,7 @@ const Player = () => {
         >
           <path fill="purple" d="M12 3v10.55A4 4 0 1 0 14 20V7h3V3h-5z" />
         </svg>
-        <h3 className={styles.welcomeMessage}>Chill and relax listening to some lofi sounds! :)</h3>
+        <h3 className={styles.welcomeMessage}>Chill and relax listening to some lofi sounds ツ</h3>
       </div>
 
       <div className={styles.playerContainer}>
@@ -111,10 +126,9 @@ const Player = () => {
             ref={iframeRef}
             width="0"
             height="0"
-            src={`https://www.youtube.com/embed/${currentChannel}?autoplay=${isPlaying ? 1 : 0}&mute=${isMuted ? 1 : 0}`}
-            frameBorder="0"
+            src={`https://www.youtube.com/embed/${currentChannel.channel}?autoplay=${isPlaying ? 1 : 0}&mute=${isMuted ? 1 : 0}`}
             allow="autoplay"
-            title="LoFi Music Stream"
+            title={currentChannel.channelName}
           ></iframe>
         </div>
 
@@ -143,6 +157,18 @@ const Player = () => {
             ))}
           </div>
         </div>
+      </div>
+
+      <div>
+        <p className={styles.channelName}>
+          <div className={styles.waveContainer}>
+            <span className={styles.wave}>┃</span>
+            <span className={styles.wave}>┃</span>
+            <span className={styles.wave}>┃</span>
+            <span className={styles.wave}>┃</span>
+          </div>
+          {currentChannel.channelName}
+        </p>
       </div>
     </>
   );
