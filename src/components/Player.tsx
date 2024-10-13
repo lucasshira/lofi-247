@@ -1,13 +1,19 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from 'react';
 import styles from './Player.module.css';
 
 import { channels } from '../channels';
 
 const Player = () => {
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const [currentVolume, setCurrentVolume] = useState(() => {
+    const savedVolume = localStorage.getItem("playerVolume");
+    return savedVolume ? Number(savedVolume) : 100;
+  });
+
   const [isMuted, setIsMuted] = useState(false);
   const [currentChannelIndex, setCurrentChannelIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [, setIsAnimating] = useState(false);
   const [showSwitchGif, setShowSwitchGif] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
 
@@ -40,6 +46,9 @@ const Player = () => {
     "https://media.giphy.com/media/9LZTcawH3mc8V2oUqk/giphy.gif",
     "https://media.giphy.com/media/gH1jGsCnQBiFHWMFzh/giphy.gif",
     "https://media.giphy.com/media/ZCZ7FHlu3sPek3h0zP/giphy.gif",
+    "https://media.giphy.com/media/XI4VDVtiHrqw7PfvdV/giphy.gif",
+    "https://media.giphy.com/media/k5zu35npVsYfgZQwwl/giphy.gif",
+    "https://media.giphy.com/media/feOLsVVsYft04/giphy.gif"
   ];
 
   const channelSwitchGif = 'https://media.giphy.com/media/3o6vXRxrhj7Ov94Gbu/giphy.gif';
@@ -53,7 +62,6 @@ const Player = () => {
   };
 
   const shuffledGifs = shuffleArray(gifs);
-
   const currentChannel = channels[currentChannelIndex];
   const currentGif = shuffledGifs[currentChannelIndex];
 
@@ -75,8 +83,25 @@ const Player = () => {
     }
   }, [isPlaying, isMuted]);
 
+  useEffect(() => {
+    localStorage.setItem("playerVolume", currentVolume.toString());
+  }, [currentVolume]);
+
   const togglePlayPause = () => {
     setIsPlaying(prev => !prev);
+  };
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleVolumeClick = (index: any) => {
+    const newVolume = (index + 1) * 10;
+    setCurrentVolume(newVolume);
+
+    if (iframeRef.current) {
+      iframeRef.current.contentWindow?.postMessage(
+        JSON.stringify({ event: 'command', func: 'setVolume', args: [newVolume] }),
+        '*'
+      );
+    }
   };
 
   const toggleMuted = () => {
@@ -132,7 +157,7 @@ const Player = () => {
         >
           <path fill="purple" d="M8 4h12v16h-8v-8h6V8h-8v12H2v-8h6zm0 10H4v4h4zm10 0h-4v4h4z" />
         </svg>
-        <h3 className={styles.welcomeMessage}>Chill and relax listening to some lofi sounds ツ</h3>
+        <h3 className={styles.welcomeMessage}>lofi hip hop radio - beats to sleep/study/relax to ☕</h3>
       </div>
 
         <a className={styles.github} href="https://github.com/lucasshira" target="_blank" rel="noopener noreferrer">
@@ -148,7 +173,7 @@ const Player = () => {
             ref={iframeRef}
             width="0"
             height="0"
-            src={`https://www.youtube.com/embed/${currentChannel.channel}?autoplay=${isPlaying ? 1 : 0}&mute=${isMuted ? 1 : 0}`}
+            src={`https://www.youtube.com/embed/${currentChannel.channel}?autoplay=${isPlaying ? 1 : 0}&mute=${isMuted ? 1 : 0}&enablejsapi=1`}
             allow="autoplay"
             title={currentChannel.channelName}
           ></iframe>
@@ -164,7 +189,6 @@ const Player = () => {
               <path fill="currentColor" d="M10 20H8V4h2v2h2v3h2v2h2v2h-2v2h-2v3h-2z" />
             </svg>
           )}
-
 
           <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" onClick={rewindButton} className={styles.icon}>
             <path fill="currentColor" d="M6 4h2v16H6zm12 0h-2v2h-2v3h-2v2h-2v2h2v3h2v2h2v2h2z" />
@@ -188,7 +212,8 @@ const Player = () => {
             {Array.from({ length: 10 }).map((_, index) => (
               <div
                 key={index}
-                className={`${styles.volumeBar} ${isAnimating && index < 10 ? styles.active : ''}`}
+                className={`${styles.volumeBar} ${index < currentVolume / 10 && !isMuted ? styles.active : ''}`}
+                onClick={() => handleVolumeClick(index)}
               ></div>
             ))}
           </div>

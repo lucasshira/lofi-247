@@ -15,28 +15,34 @@
   display: flex;
   color: white;
   transition: all 200ms;
+  align-items: center;
 }
 
 .github:hover {
-  color: purple;
+  color: #9932CC;
 }
 
 .musicIcon {
-  color: purple;
+  color: #9932CC;
   margin-right: 0.5rem;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
 }
 
 .welcomeMessage {
   font-family: monospace;
   font-size: 1rem;
   color: white;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-  margin-left: 0.2rem;
+  text-shadow: 
+  0 0 8px rgba(255, 255, 255, 0.4),
+  0 0 12px rgba(255, 255, 255, 0.3),
+  0 0 8px #9932CC,
+  0 0 15px #9932CC;
 }
 
 .playerContainer {
+  border-top: 1px solid #9932CC;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
   position: fixed;
   bottom: 2rem;
   left: 50%;
@@ -46,10 +52,8 @@
   justify-content: center;
   width: 24rem;
   background-color: var(--black-80);
-  padding: 0.8rem;
-  border: 1px solid var(--white-100);
+  padding: 0.6rem;
   border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: transparent;
 }
 
@@ -83,6 +87,10 @@
   animation: none;
 }
 
+.volumeBar.active {
+  background-color: #9932CC;
+}
+
 @keyframes pulse {
   0%, 100% {
     background-color: #9932CC;
@@ -92,16 +100,13 @@
   }
 }
 
-.volumeBar.active {
-  animation: pulse 1.5s infinite;
-}
-
 .channelName {
   font-size: 1rem;
   color: var(--white-100);
   position: fixed;
   bottom: 1vh;
   left: 50%;
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.3), 0 0 5px #9932CC;
   transform: translateX(-50%);
   font-family: monospace;
   display: flex;
@@ -146,4 +151,29 @@
 
 .wave:nth-child(3) {
   animation-delay: 0.2s;
+}
+
+@media (max-width: 568px) {
+  .welcomeMessage, .musicIcon {
+    display: none;
+  }
+
+  .playerContainer {
+    width: 20rem;
+    left: 0;
+    transform: translateX(0);
+  }
+
+  .channelName {
+    position: relative;
+    font-size: 1rem;
+  }
+
+  .wave {
+    font-size: 0.875rem;
+  }
+
+  .icon {
+    font-size: 1.2rem;
+  }
 }
