@@ -11,6 +11,11 @@
   align-items: center;
 }
 
+.icons {
+  display: flex;
+  gap: 1rem;
+}
+
 .github {
   display: flex;
   color: white;
@@ -19,6 +24,17 @@
 }
 
 .github:hover {
+  color: #9932CC;
+}
+
+.lamp {
+  display: flex;
+  color: white;
+  transition: all 200ms;
+  align-items: center;
+}
+
+.lamp:hover {
   color: #9932CC;
 }
 
