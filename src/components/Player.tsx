@@ -5,7 +5,7 @@ import { channels } from "../channels";
 import { gifs } from "../gifs";
 
 const Player = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   const [currentVolume, setCurrentVolume] = useState(() => {
     const savedVolume = localStorage.getItem("playerVolume");
