@@ -9,11 +9,13 @@
 .leftContainer {
   display: flex;
   align-items: center;
+  padding-left: 1rem;
 }
 
 .icons {
   display: flex;
   gap: 1rem;
+  padding-right: 1rem;
 }
 
 .github {
@@ -96,7 +98,7 @@
 
 .volumeBar {
   width: 10px;
-  height: 18px;
+  height: 20px;
   background-color: var(--gray-60);
   margin-right: 4px;
   transition: background-color 0.3s;
@@ -146,11 +148,12 @@
 
 .waveContainer {
   margin-right: 0.6rem;
+  padding-bottom: 0.3rem;
 }
 
 .wave {
   display: inline-block;
-  font-size: 1rem;
+  font-size: 1.2rem;
   animation: wave 1s infinite;
   margin-left: -4px;
   color: #9932CC;

@@ -27,5 +27,17 @@ export const channels: Channel[] = [
   {
     channel: 'tNkZsRW7h2c',
     channelName: 'Space Ambient Music LIVE 24/7: Space Traveling Background Music, Music for Stress Relief, Dreaming'
+  },
+  {
+    channel: 'vrB9wC6quaU',
+    channelName: 'Chill out lofi music 🍀 lofi hip hop mix makes you feel positive ~ Rainy Lofi vibes for a calm night'
+  },
+  {
+    channel: 'BU2YSFnj47w',
+    channelName: 'Japan Coffee Ambience ~ Lofi Chill Cafe and Rain Sounds in old Tokyo Street ~ Rainy Lofi Vibes'
+  },
+  {
+    channel: 'oiTvUeac67g',
+    channelName: 'Calm City Lights 🌃 Lofi Hip Hop [ Chill Out Grooves ]'
   }
 ];
