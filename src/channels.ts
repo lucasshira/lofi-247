@@ -5,8 +5,8 @@ export type Channel = {
 
 export const channels: Channel[] = [
   {
-    channel: 'mwPR8aizAyo',
-    channelName: 'Coffee Shop Radio ☕ - 24/7 lofi & jazzy hip-hop beats'
+    channel: 'N_7cSl2oq3o',
+    channelName: 'Coffee Shop Radio ❄️☕ - 24/7 Chill Lo-Fi & Jazzy Beats'
   },
   {
     channel: '5yx6BWlEVcY',

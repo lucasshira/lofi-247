@@ -1,7 +1,7 @@
 export const gifs: string[] = [
-  'https://media.giphy.com/media/pVGsAWjzvXcZW4ZBTE/giphy.gif',
-  'https://media.giphy.com/media/ttknk7M3d3UBEeZsii/giphy.gif',
-  'https://media.giphy.com/media/ssq8oGi0pPO5rMLrEV/giphy.gif',
+  "https://media.giphy.com/media/pVGsAWjzvXcZW4ZBTE/giphy.gif",
+  "https://media.giphy.com/media/ttknk7M3d3UBEeZsii/giphy.gif",
+  "https://media.giphy.com/media/ssq8oGi0pPO5rMLrEV/giphy.gif",
   "https://media.giphy.com/media/v2WuhMBzb3h5e/giphy.gif",
   "https://media.giphy.com/media/E8GfFH47PKeyI/giphy.gif",
   "https://media.giphy.com/media/wjjvv8CEWSdAcdlgtP/giphy.gif",
@@ -30,10 +30,11 @@ export const gifs: string[] = [
   "https://media.giphy.com/media/XI4VDVtiHrqw7PfvdV/giphy.gif",
   "https://media.giphy.com/media/k5zu35npVsYfgZQwwl/giphy.gif",
   "https://media.giphy.com/media/feOLsVVsYft04/giphy.gif",
-  'https://media.giphy.com/media/l1BgQOc1Jj7L86BA4/giphy.gif',
-  'https://media.giphy.com/media/110pOfMhZcYRUs/giphy.gif',
-  'https://media.giphy.com/media/5S8LH2hkd5ONY7hyXJ/giphy.gif',
+  "https://media.giphy.com/media/l1BgQOc1Jj7L86BA4/giphy.gif",
+  "https://media.giphy.com/media/110pOfMhZcYRUs/giphy.gif",
+  "https://media.giphy.com/media/5S8LH2hkd5ONY7hyXJ/giphy.gif",
   "https://media.giphy.com/media/b29IZK1dP4aWs/giphy.gif",
   "https://media.giphy.com/media/3og0ICnG2pLn8NSrRu/giphy.gif",
-  "https://media.giphy.com/media/G0Odfjd78JTpu/giphy.gif"
+  "https://media.giphy.com/media/G0Odfjd78JTpu/giphy.gif",
+  "https://media.giphy.com/media/chMmtwzdjowlM3fKZq/giphy.gif"
 ]
