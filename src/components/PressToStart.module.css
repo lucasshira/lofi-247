@@ -8,11 +8,8 @@
   font-family: monospace;
   font-size: 1.4rem;
   color: white;
-  text-shadow: 
-  0 0 8px rgba(255, 255, 255, 0.5),
-  0 0 12px rgba(255, 255, 255, 0.4),
-  0 0 8px #9932CC,
-  0 0 15px #9932CC;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5),
+    0 0 12px rgba(255, 255, 255, 0.4), 0 0 8px #9932cc, 0 0 15px #9932cc;
   white-space: nowrap;
   overflow: hidden;
   border-right: 10px solid #fff;
@@ -35,5 +32,11 @@
   }
   50% {
     border-color: white;
+  }
+}
+
+@media (max-width: 468px) {
+  .pressToStartMessage {
+    font-size: 1.2rem;
   }
 }
