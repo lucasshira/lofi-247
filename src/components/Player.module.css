@@ -26,7 +26,7 @@
 }
 
 .github:hover {
-  color: #9932CC;
+  color: #9932cc;
 }
 
 .lamp {
@@ -37,22 +37,19 @@
 }
 
 .lamp:hover {
-  color: #9932CC;
+  color: #9932cc;
 }
 
 .welcomeMessage {
   font-family: monospace;
   font-size: 1rem;
   color: white;
-  text-shadow: 
-  0 0 8px rgba(255, 255, 255, 0.4),
-  0 0 12px rgba(255, 255, 255, 0.3),
-  0 0 8px #9932CC,
-  0 0 15px #9932CC;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4),
+    0 0 12px rgba(255, 255, 255, 0.3), 0 0 8px #9932cc, 0 0 15px #9932cc;
 }
 
 .playerContainer {
-  border-top: 1px solid #9932CC;
+  border-top: 1px solid #9932cc;
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
   position: fixed;
   bottom: 2.5rem;
@@ -81,7 +78,7 @@
 }
 
 .icon:hover {
-  color: #9932CC;
+  color: #9932cc;
 }
 
 .volumeIndicator {
@@ -99,12 +96,13 @@
 }
 
 .volumeBar.active {
-  background-color: #9932CC;
+  background-color: #9932cc;
 }
 
 @keyframes pulse {
-  0%, 100% {
-    background-color: #9932CC;
+  0%,
+  100% {
+    background-color: #9932cc;
   }
   50% {
     background-color: var(--gray-60);
@@ -117,7 +115,7 @@
   position: fixed;
   bottom: 1vh;
   left: 50%;
-  text-shadow: 0 0 25px rgba(255, 255, 255, 0.3), 0 0 5px #9932CC;
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.3), 0 0 5px #9932cc;
   transform: translateX(-50%);
   font-family: monospace;
   display: flex;
@@ -149,7 +147,7 @@
   font-size: 1.2rem;
   animation: wave 1s infinite;
   margin-left: -4px;
-  color: #9932CC;
+  color: #9932cc;
   transform-origin: bottom;
 }
 
@@ -184,15 +182,10 @@
   }
 
   .channelName {
-    font-size: 0.8rem;
     white-space: normal;
     overflow-wrap: break-word;
     word-wrap: break-word;
     text-align: center;
-  }
-
-  .playerContainer {
-    max-width: 22rem;
   }
 }
 
@@ -201,20 +194,17 @@
     display: flex;
     justify-content: center;
   }
-  
+
   .welcomeMessage {
     display: none;
+  }
+
+  .channelName {
+    font-size: 0.7rem;
   }
 }
 
 @media (max-width: 468px) {
-  .channelName {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
   .playerContainer {
     max-width: 21rem;
   }

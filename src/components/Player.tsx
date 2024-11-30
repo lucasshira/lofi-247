@@ -9,7 +9,10 @@ const Player = () => {
 
   const [currentVolume, setCurrentVolume] = useState(() => {
     const savedVolume = localStorage.getItem("playerVolume");
-    return savedVolume ? Number(savedVolume) : 100;
+    const volume = savedVolume ? Number(savedVolume) : 100;
+    if (isNaN(volume)) return 100;
+
+    return volume;
   });
 
   const [isMuted, setIsMuted] = useState(false);
@@ -65,8 +68,7 @@ const Player = () => {
     setIsPlaying((prev) => !prev);
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleVolumeClick = (index: any) => {
+  const handleVolumeClick = (index: number) => {
     const newVolume = (index + 1) * 10;
     setCurrentVolume(newVolume);
 
@@ -129,7 +131,6 @@ const Player = () => {
 
   const toggleTurnOffScreen = () => {
     setTurnOffScreen((prev) => !prev);
-    console.log(turnOffScreen);
   };
 
   return (
