@@ -1,7 +1,7 @@
 .pressToStartContainer {
   display: flex;
   margin-left: 1rem;
-  max-width: 318px;
+  max-width: 286px;
 }
 
 .pressToStartMessage {
@@ -39,7 +39,7 @@
   .pressToStartContainer {
     display: flex;
     margin-left: 1rem;
-    max-width: 274px;
+    max-width: 247px;
   }
 
   .pressToStartMessage {

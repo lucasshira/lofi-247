@@ -31,7 +31,7 @@ const PressToStart = ({ setIsStarted }: PressToStartProps) => {
 
   return (
     <div onClick={pressToStart} className={styles.pressToStartContainer}>
-      <p className={styles.pressToStartMessage}>press any key to start...</p>
+      <p className={styles.pressToStartMessage}>press any key to start</p>
     </div>
   );
 };
