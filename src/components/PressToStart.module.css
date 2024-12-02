@@ -39,10 +39,10 @@
   .pressToStartContainer {
     display: flex;
     margin-left: 1rem;
-    max-width: 247px;
+    max-width: 207px;
   }
 
   .pressToStartMessage {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
