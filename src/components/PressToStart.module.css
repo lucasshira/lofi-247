@@ -35,7 +35,7 @@
   }
 }
 
-@media (max-width: 468px) {
+@media (max-width: 568px) {
   .pressToStartContainer {
     display: flex;
     margin-left: 1rem;
