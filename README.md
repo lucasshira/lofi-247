@@ -1,50 +1,25 @@
-# React + TypeScript + Vite
+# Welcome to **lofi247** ☕🎧  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**lofi247** is a relaxing and aesthetic radio streaming lofi hip hop music 24/7. This project brings the vibes of neon and 80s aesthetics with a fully custom player and visually captivating elements like GIF animations. It's perfect for chilling, studying, or just vibing.  
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features  
 
-## Expanding the ESLint configuration
+- **24/7 Lofi Streams**: Non-stop lofi beats to keep you relaxed, focused, or inspired 24/7.  
+- **6 Unique Channels**: Easily switch between curated channels directly from the custom player.  
+- **Captivating GIF Animations**: Enhance your experience with looping GIFs that complement the lofi vibe.  
+- **Dark Mode**: A distraction-free listening option for better focus and comfort.  
+- **Retro 80s Neon Aesthetics**: Immerse yourself in a visually stunning interface inspired by neon lights and retro-futuristic design.  
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🖥️ Tech Stack  
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- **React**: For building the interactive and dynamic UI.  
+- **CSS Modules**: To style components with scoped and maintainable CSS.
+- **YouTube API**: Used to stream live lofi music directly from curated YouTube channels.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 🌟 Version 1.0.0 Released  
+
+The first version of **Lofi Hip Hop Radio** is live!  Check it out here: [lofi247.vercel.app](https://lofi247.vercel.app/)
