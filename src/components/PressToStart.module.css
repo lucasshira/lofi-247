@@ -1,7 +1,6 @@
 .pressToStartContainer {
-  display: flex;
+  display: inline-flex;
   margin-left: 1rem;
-  max-width: 286px;
 }
 
 .pressToStartMessage {
@@ -35,14 +34,12 @@
   }
 }
 
-@media (max-width: 568px) {
+@media (max-width: 468px) {
   .pressToStartContainer {
-    display: flex;
     margin-left: 1rem;
-    max-width: 207px;
   }
 
   .pressToStartMessage {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
